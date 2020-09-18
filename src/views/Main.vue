@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div>
     <header>
       <core-header />
     </header>
@@ -8,13 +8,14 @@
       <div id="core-personal" v-show="isSigned">
         <core-personal />
       </div>
+      <!-- question list -->
+      <div id="core-question-list" v-if="isSigned">
+        <core-question-list />  
+      </div>     
       <!-- view -->
       <div id="core-view">
         <core-view />
       </div>
-      <!-- question list -->
-      <div id="core-question-list" v-if="isSigned">bbb</div>
-      
     </div>
   </div>
 </template>
@@ -28,7 +29,8 @@ export default {
   components: {
     CoreHeader: () => import("@/components/core/CoreHeader.vue"),
     CorePersonal: () => import("@/components/core/CorePersonal.vue"),
-    CoreView: () => import("@/components/core/CoreView.vue")
+    CoreView: () => import("@/components/core/CoreView.vue"),
+    CoreQuestionList: () => import("@/components/core/CoreQuestionList.vue"),
   }
 };
 </script>

@@ -2,12 +2,12 @@
     <v-container>
       <br/>
       <v-list-item class="px-2">
-        <v-list-item-avatar>
-          <v-img src="https://randomuser.me/api/portraits/men/85.jpg"></v-img>
+        <v-list-item-avatar size="70px">
+          <v-img src="@/assets/img/jordy.png"></v-img>
         </v-list-item-avatar>
 
         <v-list-item-content>
-          <v-list-item-title>John Leider</v-list-item-title>
+          <v-list-item-title>J Min</v-list-item-title>
           <v-list-item-subtitle>1,000dallars</v-list-item-subtitle>
         </v-list-item-content>
 

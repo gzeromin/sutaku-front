@@ -7,6 +7,10 @@
     font-family: 'Schoolbell', cursive;
     font-size: 30px;
 }
+textarea {
+    font-family: 'Gamja Flower', cursive;
+    font-size: 24px;
+}
 header {
     position: fixed;
     width: 100%;
@@ -15,22 +19,29 @@ header {
     background-color: white;
     z-index: 100;
 }
-
 #core-body {
-    display: flex;
     top:110px;
     position: relative;
+    height: 100%;
 }
 #core-personal {
-    flex:1;
+    position: fixed;
+    height: 100%;
+    left: 0;
+    z-index: 100;
+    width: 14%;
 }
 #core-view {
-    flex:6;
+    margin-left: 14%;
+    margin-right: 20%;
     height: 100%;
 }
 #core-question-list {
-    flex:3;
-    background-color: lightpink;
+    position: fixed;
+    height:100%;
+    right: 0;
+    z-index: 100;
+    width: 20%;
 }
 #core-problem {
     margin: 10px;
