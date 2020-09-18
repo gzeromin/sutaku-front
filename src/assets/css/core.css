@@ -31,10 +31,17 @@ header {
     z-index: 100;
     width: 14%;
 }
-#core-view {
+.core-view-before-sign-in {
+    margin-right: 20%;
+    height: 100%;
+}
+.core-view {
     margin-left: 14%;
     margin-right: 20%;
     height: 100%;
+}
+.core-view-is-folded {
+    
 }
 #core-question-list {
     position: fixed;
@@ -45,4 +52,9 @@ header {
 }
 #core-problem {
     margin: 10px;
+}
+#folded-list {
+    position: fixed;
+    right: 0;
+    z-index: 100;
 }

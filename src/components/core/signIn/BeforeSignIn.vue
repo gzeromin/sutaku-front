@@ -34,7 +34,7 @@
       <v-btn
         text
         color="indigo"
-        @click="signIn"
+        @click="goToSignIn"
       >
         Sign in
       </v-btn>
@@ -54,23 +54,29 @@
   </v-container>
 </template>
 <script>
-  export default {
-    name: 'BeforeSingIn',
-    data: () => ({
-      staySignIn: true,
+import { mapActions } from 'vuex';
 
-      email: "",
-      password: "",
-    }),
-    methods: {
-      goToSignUp() {
-        this.$router.push({
-          path: '/signUp'
-        })
-      },
-      signIn() {
-        alert(this.email + this.password);
+export default {
+  name: 'BeforeSingIn',
+  data: () => ({
+    staySignIn: true,
+    email: "jmin@sutaku.com",
+    password: "0000",
+  }),
+  methods: {
+    goToSignUp() {
+      this.$router.push({
+        path: '/signUp'
+      })
+    },
+    goToSignIn() {
+      if(this.email == "jmin@sutaku.com" && this.password == "0000") {
+        this.signIn(true);
+      } else {
+        alert("you cant sign in!");
       }
-    }
+    },
+    ...mapActions(['signIn'])
   }
+}
 </script>

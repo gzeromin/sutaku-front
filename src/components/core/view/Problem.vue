@@ -73,7 +73,7 @@
 export default {
   name: "Problem",
   data: () => ({
-    showTextArea: true
+    showTextArea: false
   }),
   methods: {
     clickBtn() {

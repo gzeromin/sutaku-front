@@ -18,9 +18,9 @@
           class="ml-md-auto"
         >
           <v-menu
+            v-if="!isSignedIn"
             v-model="menu"
             :close-on-content-click="false"
-            nudge-left="150px;"
             nudge-bottom="7px;"
             offset-y
           >
@@ -31,7 +31,7 @@
                 v-bind="attrs"
                 v-on="on"
               >
-                Sign in
+                Sign In
               </v-btn>
             </template>
 
@@ -49,23 +49,44 @@
               <signed-in />
             </v-card>
           </v-menu>
+          <v-btn
+            v-else
+            color="indigo"
+            dark
+            @click="goToSignOut"
+          >
+            Sign Out
+          </v-btn>
         </v-col>
       </v-row>
     </v-container>
   </div>
 </template>
 <script>
-  export default {
-    name: 'CoreHeader',
-    data: () => ({
-      menu: false,
-      isSignedIn: false,
-    }),
-    components: {
-      BeforeSignIn: () => import("@/components/core/signIn/BeforeSignIn"),
-      SignedIn: () => import("@/components/core/signIn/SignedIn")
-    }
+import { mapActions, mapState } from 'vuex';
+
+export default {
+  name: 'CoreHeader',
+  data: () => ({
+    menu: false,
+  }),
+  components: {
+    BeforeSignIn: () => import("@/components/core/signIn/BeforeSignIn"),
+    SignedIn: () => import("@/components/core/signIn/SignedIn")
+  },
+  methods: {
+    goToSignOut() {
+      this.signIn(false);
+      this.menu = false;
+    },
+    ...mapActions(['signIn'])
+  },
+  computed: {
+    ...mapState({
+      isSignedIn: state => state.isSignedIn,
+    })
   }
+}
 </script>
 <style>
 .sign-card * {
