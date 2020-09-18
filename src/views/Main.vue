@@ -5,7 +5,7 @@
     </header>
     <div id="core-body">
       <!-- personal -->
-      <div id="core-personal">
+      <div id="core-personal" v-show="isSigned">
         <core-personal />
       </div>
       <!-- view -->
@@ -13,7 +13,7 @@
         <core-view />
       </div>
       <!-- question list -->
-      <div id="core-question-list">bbb</div>
+      <div id="core-question-list" v-if="isSigned">bbb</div>
       
     </div>
   </div>
@@ -22,6 +22,9 @@
 <script>
 export default {
   name: "Main",
+  data: ()=> ({
+    isSigned: true,
+  }),
   components: {
     CoreHeader: () => import("@/components/core/CoreHeader.vue"),
     CorePersonal: () => import("@/components/core/CorePersonal.vue"),

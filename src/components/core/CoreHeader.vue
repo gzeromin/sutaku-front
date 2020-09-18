@@ -68,10 +68,8 @@
   }
 </script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 .sign-card * {
   overflow: hidden;
-  font-family: 'Open Sans', sans-serif;
   font-size: 14px;
 }
 </style>

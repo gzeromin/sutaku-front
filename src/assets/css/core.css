@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -16,31 +17,21 @@ header {
 }
 
 #core-body {
+    display: flex;
     top:110px;
     position: relative;
-    overflow: hidden;
 }
 #core-personal {
-    position: fixed;
-    width: 250px;
-    left: 5px;
-    z-index: 30;
-    float: left;
+    flex:1;
 }
 #core-view {
-    width:1000px;
-    margin: 0 auto;
-    background-color: blue;
-    float: left;
+    flex:6;
+    height: 100%;
 }
 #core-question-list {
-    position: fixed;
-    width: 350px;
-    height: 100%;
-    right: 5px;
-    background-color: green;
-    z-index: 100;
+    flex:3;
+    background-color: lightpink;
 }
 #core-problem {
-    margin: 17%;
+    margin: 10px;
 }
