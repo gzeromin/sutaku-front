@@ -1,18 +1,55 @@
 <template>
-  <v-container class="d-flex">
+  <v-container class="d-flex" style="border: 1px solid orange;">
     <div class="pb">
-      <div class="pb-title d-flex align-center justify-center">
-        문제: 참말, 거짓말
-      </div>
       <v-card
-        class="pb-card d-flex align-center justify-center"
+        class ="pb-card"
       >
-      두 갈래의 길이 두마을과 연결되어 있습니다. <br/>
-      한마을에는 참말만 하는 사람들이 살고 있고 <br/>
-      다른 마을에는 거짓말만 하는 사람들이 살고있습니다.<br/>
-      철수는 참말만 하는 마을을 찾아가다가 중간에 갈림길에서 한사람을 만났는데,<br/>
-      두 마을중 한마을에 사는 것은 확실하나 어디사는지 모릅니다.<br/>
-      이사람에게 한가지만 질문하여 참마을로 가는 방법은?<br/>
+        <v-list-item>
+          <v-list-item-avatar 
+            size="50px"
+            @click="clicked"
+          >
+            <v-img src="@/assets/img/jordy.png"></v-img>
+          </v-list-item-avatar>
+          <v-list-item-content>
+            <span style="font-size:50px;">참말, 거짓말</span>
+            <v-list-item-subtitle>by J Min</v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+
+        
+          두 갈래의 길이 두마을과 연결되어 있습니다. <br/>
+          한마을에는 참말만 하는 사람들이 살고 있고 <br/>
+          다른 마을에는 거짓말만 하는 사람들이 살고있습니다.<br/>
+          철수는 참말만 하는 마을을 찾아가다가 중간에 갈림길에서 한사람을 만났는데,<br/>
+          두 마을중 한마을에 사는 것은 확실하나 어디사는지 모릅니다.<br/>
+          이사람에게 한가지만 질문하여 참마을로 가는 방법은?<br/>
+<br/><br/><br/>
+          두 갈래의 길이 두마을과 연결되어 있습니다. <br/>
+          한마을에는 참말만 하는 사람들이 살고 있고 <br/>
+          다른 마을에는 거짓말만 하는 사람들이 살고있습니다.<br/>
+
+        <v-card-actions>
+          <v-btn
+            text
+            color="deep-purple accent-4"
+          >
+            Read
+          </v-btn>
+          <v-btn
+            text
+            color="deep-purple accent-4"
+          >
+            Bookmark
+          </v-btn>
+          <v-spacer></v-spacer>
+          <v-btn icon>
+            <v-icon>mdi-heart</v-icon>
+          </v-btn>
+          <v-btn icon>
+            <v-icon>mdi-share-variant</v-icon>
+          </v-btn>
+        </v-card-actions>
       </v-card>
       <center>
         <v-btn
@@ -25,22 +62,19 @@
     </div>
     <div 
       v-if="showTextArea"
-      class="pb-solution d-flex justify-center align-center"
+      class="sol d-flex justify-center align-center"
     >
       TO DO!
       <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-
-      <br/>
-      <br/>
-      <br/>
-
+      <span>{{x}},{{y}}</span>
+      <canvas 
+        id="sol-canvas"
+        @mousedown="beginDrawing"
+        @mouseup="stopDrawing"
+        @mousemove="draw"
+        ref="canvas"
+      ></canvas>
+      
       <br/>
       <br/>
       <br/>
@@ -73,11 +107,50 @@
 export default {
   name: "Problem",
   data: () => ({
-    showTextArea: false
+    canvas: null,
+    x:0,
+    y:0,
+    isDrawing: false,
+    showTextArea: true
   }),
+  mounted() {
+    this.canvas = this.$refs.canvas.getContext('2d');
+  },
   methods: {
+    clicked() {
+      alert("???");
+    },
     clickBtn() {
       this.showTextArea = !this.showTextArea;
+      
+    },
+    drawLine(x1, y1, x2, y2) {
+      let ctx = this.canvas;
+      ctx.beginPath();
+      ctx.strokeStyle = 'black';
+      ctx.lineWidth = 1;
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x2, y2);
+      ctx.stroke();
+      ctx.closePath();
+    },
+    draw(e) {
+      this.drawLine(this.x, this.y, e.offsetX, e.offsetY);
+      this.x = e.offsetX;
+      this.y = e.offsetY;
+    },
+    beginDrawing(e) {
+      this.x = e.offsetX;
+      this.y = e.offsetY;
+      this.isDrawing = true;
+    },
+    stopDrawing(e) {
+      if(this.isDrawing) {
+        this.drawLine(this.x, this.y, e.offsetX, e.offsetY);
+        this.x = 0;
+        this.y = 0;
+        this.isDrawing = false;
+      }
     }
   },
   computed: {
@@ -92,22 +165,22 @@ export default {
   font-family: 'Gamja Flower', cursive;
 }
 .pb {
-  margin: 20px auto 30px;
+  margin: 0 auto;
   width: 50%;
-}
-.pb-title {
-  font-size: 50px;
-  margin: 40px auto 10px;
+  border: 1px solid teal;
 }
 .pb-card {
   width: 100%;
-  height: 90%;
-  max-height: 500px;
   font-size: 24px;
-  margin: 0px auto 20px;
+  margin: 50px auto 20px;
+  border: 1px solid slateblue;
 }
-.pb-solution {
+.sol {
   width: 50%;
   font-size: 24px;
+  border: 1px solid deeppink;
+}
+#sol-canvas {
+  border: 1px solid coral;
 }
 </style>

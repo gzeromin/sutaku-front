@@ -11,7 +11,7 @@
 </template>
 <script>
 export default {
-  name: 'SingUp',
+  name: 'SignUp',
   methods: {
     goToMain() {
       this.$router.push({
