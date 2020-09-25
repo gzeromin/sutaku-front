@@ -22,6 +22,7 @@ header {
 }
 #core-body {
     top:110px;
+    height: 100vh;
     position: relative;
     border: 1px solid blue
 }
@@ -52,7 +53,7 @@ header {
     width: 20%;
     border: 1px solid darkmagenta;
 }
-#core-problem {
+#core-view {
     margin: 10px;
     border: 1px solid yellowgreen;
 }

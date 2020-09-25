@@ -62,11 +62,11 @@
     </div>
     <div 
       v-if="showTextArea"
-      class="sol d-flex justify-center align-center"
+      class="sol"
     >
       TO DO!
       <br/>
-      <span>{{x}},{{y}}</span>
+      <span>{{x}},{{y}}</span><br/>
       <canvas 
         id="sol-canvas"
         @mousedown="beginDrawing"
@@ -75,30 +75,30 @@
         ref="canvas"
       ></canvas>
       
-      <br/>
-      <br/>
-      <br/>
-
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-
-      <br/>
-      <br/>
-      <br/>
-
-      <br/>
-      <br/>
+      <br/>aa
+      <br/>aa
+      <br/>aa
+aa
+  aa    <br/>
+    aa  <br/>
+      aa<br/>
+      <br/>aa
+      <br/>aa
+      <br/>aa
+      <br/>aa
+      <br/>aa
+      <br/>aa
+      <br/>aa
+      <br/>aa
+      <br/>aa
+      <br/>aa
+aa
+  aa    <br/>
+    aa  <br/>
+      aa<br/>
+aa
+  aa    <br/>
+    aa  <br/>
     </div>
   </v-container>
 </template>
@@ -181,6 +181,7 @@ export default {
   border: 1px solid deeppink;
 }
 #sol-canvas {
+  margin: 0 auto;
   border: 1px solid coral;
 }
 </style>
