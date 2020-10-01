@@ -1,13 +1,8 @@
 <template>
   <div>
-    <!-- Problem -->
     <div id="core-view">
       <Problem v-if="funcNavi=='problem'"/>
       <Upload v-else-if="funcNavi=='upload'"/>
-    </div>
-
-    <!-- Upload -->
-    <div>
     </div>
   </div>
 </template>
