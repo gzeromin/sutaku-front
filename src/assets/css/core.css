@@ -13,15 +13,21 @@ textarea {
 }
 header {
     position: fixed;
-    width: 100%;
-    height: 100px;
+    right: 10px;
+    padding-top: 5px;
     overflow: hidden;
-    background-color: white;
     z-index: 100;
-    border: 1px solid aquamarine;
+}
+#avatar {
+    display: block;
+    align-items: center;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-position: center center;
 }
 #core-body {
-    top:110px;
     height: 100vh;
     position: relative;
     border: 1px solid blue
@@ -48,6 +54,7 @@ header {
 #core-question-list {
     position: fixed;
     height:100%;
+    top: 110px;
     right: 0;
     z-index: 100;
     width: 20%;

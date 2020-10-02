@@ -1,69 +1,55 @@
 <template>
   <div>
-    <v-container>
-      <v-row>
-        <v-col
-          md="5"
-          class="ml-md-auto"
+    <!-- before sign in -->
+    <v-menu
+      v-if="!isSignedIn"
+      v-model="menu"
+      :close-on-content-click="false"
+      nudge-bottom="-50"
+      nudge-left="220"
+      offset-y
+    >
+      <template v-slot:activator="{ on, attrs }">
+        <v-btn
+          icon
+          v-bind="attrs"
+          v-on="on"
         >
-          <v-text-field 
-            prepend-inner-icon="fas fa-question"
-            placeholder="Any math question"
-            outlined
-          >
-          </v-text-field>
-        </v-col>
-        <v-col
-          md="2"
-          class="ml-md-auto"
-        >
-          <v-menu
-            v-if="!isSignedIn"
-            v-model="menu"
-            :close-on-content-click="false"
-            nudge-bottom="7px;"
-            offset-y
-          >
-            <template v-slot:activator="{ on, attrs }">
-              <v-btn
-                color="indigo"
-                dark
-                v-bind="attrs"
-                v-on="on"
-              >
-                Sign In
-              </v-btn>
-            </template>
-
-            <!-- before sign in -->
-            <v-card
-              class="sign-card"
-              v-if="!isSignedIn"
-              height= "100%"
-            >
-              <before-sign-in />
-            </v-card>
-
-            <!-- after sign in -->
-            <v-card v-else>
-              <signed-in />
-            </v-card>
-          </v-menu>
-          <v-btn
-            v-else
-            color="indigo"
-            dark
-            @click="goToSignOut"
-          >
-            Sign Out
-          </v-btn>
-        </v-col>
-      </v-row>
-    </v-container>
+          <v-icon>fas fa-user-alt</v-icon>
+        </v-btn>
+      </template>
+      <div class="sign-card">
+        <before-sign-in />
+      </div>
+    </v-menu>
+    <!-- after sign in -->
+    <div
+      v-else
+      class="after-sign-in"
+    >
+      <v-menu
+        v-model="menu"
+        :close-on-content-click="false"
+        offset-y
+      >
+        <template v-slot:activator="{ on, attrs }">
+          <div 
+            id="avatar" 
+            :style="{'background-image': 'url('+require('@/assets/img/jordy.png')+')'}"
+            v-bind="attrs"
+            v-on="on"
+          ></div>
+        </template>
+        <div class="sign-card">
+          <after-sign-in @signOut="menu = false"/>
+        </div>
+      </v-menu>
+        aaaaaaaaaaab
+    </div>
   </div>
 </template>
 <script>
-import { mapActions, mapState } from 'vuex';
+import { mapState } from 'vuex';
 
 export default {
   name: 'CoreHeader',
@@ -72,15 +58,9 @@ export default {
   }),
   components: {
     BeforeSignIn: () => import("@/components/core/signIn/BeforeSignIn"),
-    SignedIn: () => import("@/components/core/signIn/SignedIn")
+    AfterSignIn: () => import("@/components/core/signIn/AfterSignIn")
   },
-  methods: {
-    goToSignOut() {
-      this.signIn(false);
-      this.menu = false;
-    },
-    ...mapActions(['signIn'])
-  },
+  
   computed: {
     ...mapState({
       isSignedIn: state => state.isSignedIn,
@@ -89,8 +69,22 @@ export default {
 }
 </script>
 <style>
+.sign-card {
+  background: linear-gradient(-160deg, transparent 50px, white 0) top right;
+}
 .sign-card * {
-  overflow: hidden;
   font-size: 14px;
+}
+.after-sign-in {
+
+}
+#avatar {
+  display: block;
+  align-items: center;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  background-position: center center;
 }
 </style>

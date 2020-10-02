@@ -70,11 +70,7 @@ export default {
       })
     },
     goToSignIn() {
-      if(this.email == "jmin@sutaku.com" && this.password == "0000") {
-        this.signIn(true);
-      } else {
-        alert("you cant sign in!");
-      }
+      this.signIn(this.email, this.password);
     },
     ...mapActions(['signIn'])
   }

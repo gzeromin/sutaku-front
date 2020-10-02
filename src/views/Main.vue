@@ -10,7 +10,7 @@
       </div>
       <!-- question list -->
       <div id="core-question-list">
-        <core-question-list />  
+        <core-question-list v-if="false"/>  
       </div>
       <!-- view -->
       <div 
