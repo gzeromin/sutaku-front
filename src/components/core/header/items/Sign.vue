@@ -11,6 +11,7 @@
     >
       <template v-slot:activator="{ on, attrs }">
         <v-btn
+          
           icon
           v-bind="attrs"
           v-on="on"
@@ -42,33 +43,30 @@
         </template>
         <div class="sign-card">
           <after-sign-in @signOut="menu = false"/>
+        aaaaaaaaaaab
         </div>
       </v-menu>
-        aaaaaaaaaaab
     </div>
   </div>
 </template>
 <script>
-import { mapState } from 'vuex';
-
+import { mapState } from 'vuex'
 export default {
-  name: 'CoreHeader',
   data: () => ({
     menu: false,
-  }),
-  components: {
-    BeforeSignIn: () => import("@/components/core/signIn/BeforeSignIn"),
-    AfterSignIn: () => import("@/components/core/signIn/AfterSignIn")
-  },
-  
+  }),  
   computed: {
     ...mapState({
       isSignedIn: state => state.isSignedIn,
     })
-  }
+  },
+  components: {
+    BeforeSignIn: () => import("@/components/core/signIn/BeforeSignIn"),
+    AfterSignIn: () => import("@/components/core/signIn/AfterSignIn"),
+  },
 }
 </script>
-<style>
+<style scoped>
 .sign-card {
   background: linear-gradient(-160deg, transparent 50px, white 0) top right;
 }
@@ -86,5 +84,9 @@ export default {
   height: 50px;
   background-size: cover;
   background-position: center center;
+}
+.sign-in-card {
+  display: inline-block;
+  width: 20%;
 }
 </style>

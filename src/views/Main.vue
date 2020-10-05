@@ -1,23 +1,8 @@
 <template>
   <div>
-    <header>
-      <core-header />
-    </header>
-    <div id="core-body">
-      <!-- personal -->
-      <div id="core-personal" v-if="isSignedIn">
-        <core-personal />
-      </div>
-      <!-- question list -->
-      <div id="core-question-list">
-        <core-question-list v-if="false"/>  
-      </div>
-      <!-- view -->
-      <div 
-        :class="[isSignedIn ? 'core-view' : 'core-view-before-sign-in']">
-        <core-view />
-      </div>
-    </div>
+    <core-header id="core-header"/>
+    <core-navi id="core-navi"/>
+    <core-body id="core-body"/>
   </div>
 </template>
 
@@ -35,10 +20,9 @@ export default {
     })
   },
   components: {
-    CoreHeader: () => import("@/components/core/CoreHeader.vue"),
-    CorePersonal: () => import("@/components/core/CorePersonal.vue"),
-    CoreView: () => import("@/components/core/CoreView.vue"),
-    CoreQuestionList: () => import("@/components/core/CoreQuestionList.vue"),
+    CoreHeader: () => import("@/components/core/header/CoreHeader.vue"),
+    CoreNavi: () => import("@/components/core/navi/CoreNavi.vue"),
+    CoreBody: () => import("@/components/core/body/CoreBody.vue"),
   }
 };
 </script>
