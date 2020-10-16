@@ -1,15 +1,17 @@
 <template>
   <div>
     <pq-navi id="pq-navi"/>
-    <personal-menu id="personal-menu"/>
+    <div id="login-btn">
+      L<span class="font-size-small">og</span>
+      <span class="font-size-small line-height-0"><br/>in</span>
+    </div>
   </div>
 </template>
 <script>
 export default {
   name: 'CoreHeader',
   components: {
-    PqNavi: () => import("@/components/core/header/items/PqNavi"),
-    PersonalMenu: () => import("@/components/core/header/items/menu/Menu"),
+    PqNavi: () => import("@/components/core/header/items/PqNavi")
   }
 }
 </script>
@@ -20,13 +22,17 @@ export default {
   display: inline-block;
   width: 20%;
 }
-#personal-menu {
+#login-btn {
   position: absolute;
-  right: 1%;
+  right: 2.5rem;
   display: inline-block;
-  width: 25%;
-  height: 50px;
-  background-color: pink;
-  margin: 25px auto;
+  margin: 2.5rem auto;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  width: 5rem;
+  height: 5rem;
+  border: 2px solid black;
+  border-radius: .8rem;
 }
 </style>

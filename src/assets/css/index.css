@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300&family=Nanum+Gothic:wght@400;700;800&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+table {
+  margin: 2rem auto;
+  width: 90%;
+  border-spacing: 0 2.5rem;
+}
+
+table th {
+  width: 15%;
+}
+
+button {
+  margin: 0 3rem;
+  padding: .5rem 2rem;
+  border-radius: 1rem;
+  border-style: outset;
+  background-color: lightgray;
+}
+
+.user {
+  height: 35rem;
+}
+
+.user-photo {
+  margin: 1rem auto;
+  width: 68%;
+  height: 20rem;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 1rem;
+  -webkit-box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.3);
+}
+
+.user-name {
+  padding: 2rem;
+  font-size: 2rem;
+  text-align: end;
+}
+
+.navi {
+  text-align: end;
+}
+
+.navi-menu {
+  text-decoration: underline;
+  padding: 1rem;
+  font-size: 3rem;
+  text-transform: uppercase;
+  background-size: 220%;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.navi-menu:hover {
+  text-decoration: none;
+  background-position: 100%;
+  color: beige;
+}
+
+.navi #list {
+  background-image: linear-gradient(120deg, white 0%, white 82%, yellow 82%, black 100%);
+}
+
+.navi #upload {
+  background-image: linear-gradient(120deg, white 0%, white 77%, hotpink 77%, black 100%);
+}
+
+.selected {
+  text-decoration: none;
+  background-position: 100%;
+  color: beige;
+}
+
+.font-size-small {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+.font-size-medium {
+  font-size: 2.5rem;
+}
+
+.font-size-big {
+  font-size: 4rem;
+}
+
+.line-height-0 {
+  line-height: 0;
+  vertical-align: top;
+}
+
+.color-problem {
+  background-color: mediumslateblue;
+}
+
+.color-question {
+  background-color: lightcoral;
+}
+
+/* CORE */
+#core-header {
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  left: 0;
+  z-index: 100;
+  background-color: white;
+  -webkit-box-shadow: 0.2rem 0.2rem 0.8rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0.2rem 0.2rem 0.8rem rgba(0, 0, 0, 0.2);
+}
+
+#core-personal {
+  position: fixed;
+  top: 100px;
+  height: 100%;
+  left: 0;
+  z-index: 100;
+  width: 20%;
+  border-right: 1px dotted rgba(0, 0, 0, 0.2);
+}
+
+#core-body {
+  top: 100px;
+  height: 100vh;
+  position: relative;
+  margin-left: 20%;
+}
+
+.core-view-before-sign-in {
+  margin-right: 20%;
+  height: 100%;
+}
+
+.core-view {
+  margin-left: 14%;
+  margin-right: 20%;
+  height: 100%;
+}
+
+#core-question-list {
+  position: fixed;
+  height: 100%;
+  top: 110px;
+  right: 0;
+  z-index: 100;
+  width: 20%;
+}
+
+#folded-list {
+  position: fixed;
+  right: 0;
+  z-index: 100;
+}
+/*# sourceMappingURL=index.css.map */

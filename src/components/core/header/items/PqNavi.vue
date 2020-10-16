@@ -1,61 +1,65 @@
 <template>
   <div>
     <div 
-      :class="[pqNavi == 'p' ? 'selected':'non-selected']"
+      :class="[pqNavi == 'problem' ? 'selected':'non-selected']"
       id="problem"
-      @click="clickPqNavi('p')"
+      @click="switchView('problem')"
     >
-      P<span class="text-small">roblem</span>
+      P<span class="font-size-small">roblem</span>
     </div>
     <div 
-      :class="[pqNavi == 'q' ? 'selected':'non-selected']"
+      :class="[pqNavi == 'question' ? 'selected':'non-selected']"
       id="question"
-      @click="clickPqNavi('q')"
+      @click="switchView('question')"
     >
-      Q<span class="text-small">question</span>
+      Q<span class="font-size-small">question</span>
     </div>
   </div>
 </template>
 <script>
+import { mapMutations, mapState } from 'vuex';
 export default {
-  data: () => ({
-    pqNavi: "p"
-  }),
   methods: {
-    clickPqNavi(naviName) {
-      this.pqNavi = naviName;
-    }
+    switchView(path) {
+      this.SET_PQ_NAVI(path);
+      this.SET_FUNC_NAVI('');
+    },
+    ...mapMutations([
+      'SET_PQ_NAVI',
+      'SET_FUNC_NAVI'
+    ])
+  },
+  computed: {
+    ...mapState({
+      pqNavi: state => state.pqNavi
+    })
   }
 }
 </script>
-<style scoped>
-#problem {
+<style lang="scss" scoped>
+#problem, #question {
   display: inline-block;
   width: 50%;
   text-align: center;
-  background-color: royalblue;
-  height: 100px;
-  line-height: 100px;
-  font-size: 50px;
+  height: 10rem;
+  line-height: 10rem;
+  font-size: 5rem;
   font-weight: bold;
+  border: outset;
+}
+#problem {
+  background-color: mediumslateblue;
 }
 #question {
-  display: inline-block;
-  width: 50%;
-  text-align: center;
   background-color: lightcoral;
-  height: 100px;
-  line-height: 100px;
-  font-size: 50px;
-  font-weight: bold;
-}
-.text-small {
-  font-size: 20px;
 }
 .selected {
+  box-sizing: border-box;
+  border: inset;
   color: black !important;
 }
 .non-selected {
+  border: outset;
   color: white !important;
 }
 </style>

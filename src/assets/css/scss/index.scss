@@ -1,10 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
-* {
-    font-family: 'Schoolbell', cursive;
-    font-size: 30px;
-}
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "abstracts/extends";
+
+@import "base/base";
+@import "base/personal";
+@import "base/utilities";
+
+@import "layout/header";
+@import "layout/main";
 
 /* CORE */
 #core-header {
@@ -15,16 +18,17 @@
     left: 0;
     z-index: 100;
     background-color: white;
-    border: 1px solid brown;
+    box-shadow: .2rem .2rem .8rem rgba(0,0,0,.2);
 }
-#core-navi {
+
+#core-personal {
     position: fixed;
     top: 100px;
     height: 100%;
     left: 0;
     z-index: 100;
     width: 20%;
-    border: 1px solid cadetblue;
+    border-right: 1px dotted rgba(0,0,0,.2);
 }
 
 #core-body {
@@ -32,18 +36,15 @@
     height: 100vh;
     position: relative;
     margin-left: 20%;
-    border: 1px solid blue
 }
 .core-view-before-sign-in {
     margin-right: 20%;
     height: 100%;
-    border: 1px solid cornflowerblue;
 }
 .core-view {
     margin-left: 14%;
     margin-right: 20%;
     height: 100%;
-    border: 1px solid darkkhaki;
 }
 #core-question-list {
     position: fixed;
@@ -52,15 +53,9 @@
     right: 0;
     z-index: 100;
     width: 20%;
-    border: 1px solid darkmagenta;
-}
-#core-view {
-    margin: 10px;
-    border: 1px solid yellowgreen;
 }
 #folded-list {
     position: fixed;
     right: 0;
     z-index: 100;
-    border: 1px solid violet;
 }

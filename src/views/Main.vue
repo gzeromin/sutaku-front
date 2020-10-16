@@ -1,7 +1,7 @@
 <template>
   <div>
     <core-header id="core-header"/>
-    <core-navi id="core-navi"/>
+    <core-personal id="core-personal"/>
     <core-body id="core-body"/>
   </div>
 </template>
@@ -21,7 +21,7 @@ export default {
   },
   components: {
     CoreHeader: () => import("@/components/core/header/CoreHeader.vue"),
-    CoreNavi: () => import("@/components/core/navi/CoreNavi.vue"),
+    CorePersonal: () => import("@/components/core/personal/CorePersonal.vue"),
     CoreBody: () => import("@/components/core/body/CoreBody.vue"),
   }
 };
