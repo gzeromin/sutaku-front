@@ -2,7 +2,7 @@
   <div>
     <unit 
       v-for="pb in pbs" 
-      :key="pb.index"
+      :key="pb.title"
       :item="pb"
     ></unit>
   </div>

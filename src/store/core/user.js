@@ -15,6 +15,9 @@ export default {
       var flag = true;
       if(flag) {
         console.log(payload);
+        userService.getUser(payload).then(res => {
+          console.log(res);
+        } )
         return true;
       }
       return userService.getUser(payload).then(res => {
