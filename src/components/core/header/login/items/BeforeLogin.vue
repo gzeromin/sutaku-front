@@ -25,7 +25,7 @@
     <v-row no-gutters justify="end">
       <v-switch 
         label="Stay singed in" 
-        v-model="staySignIn" 
+        v-model="stayLogin" 
         color="indigo"
         dense 
       ></v-switch>
@@ -34,9 +34,9 @@
       <v-btn
         text
         color="indigo"
-        @click="goToSignIn"
+        @click="goToLogin"
       >
-        Sign in
+        Login
       </v-btn>
       <v-btn 
         color="pink lighten-1" 
@@ -59,7 +59,7 @@ import { mapActions } from 'vuex';
 export default {
   name: 'BeforeSingIn',
   data: () => ({
-    staySignIn: true,
+    stayLogin: true,
     email: "jmin@sutaku.com",
     password: "0000",
   }),
@@ -69,10 +69,10 @@ export default {
         path: '/signUp'
       })
     },
-    goToSignIn() {
-      this.signIn(this.email, this.password);
+    goToLogin() {
+      this.login(this.email, this.password);
     },
-    ...mapActions(['signIn'])
+    ...mapActions(['login'])
   }
 }
 </script>

@@ -10,7 +10,7 @@ export default new Vuex.Store({
     user,
   },
   state: {
-    isSignedIn: true,
+    isLogin: true,
     pqNavi: 'problem',
     funcNavi: 'problem',
     problem: {
@@ -38,8 +38,8 @@ export default new Vuex.Store({
     ]
   },
   mutations: {
-    SET_IS_SIGNED_IN(state, value) {
-      state.isSignedIn = value;
+    SET_IS_LOGIN(state, value) {
+      state.isLogin = value;
     },
     SET_PQ_NAVI(state, value) {
       state.pqNavi = value;
@@ -52,9 +52,9 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    async signIn(context, payload) {
+    async login(context, payload) {
       const res = await context.dispatch("user/getUser", payload);
-      context.commit("SET_IS_SIGNED_IN", res);
+      context.commit("SET_IS_LOGIN", res);
     }
   }
 });

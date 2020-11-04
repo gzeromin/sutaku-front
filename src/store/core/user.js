@@ -28,6 +28,16 @@ export default {
           return false;
         }
       });
+    },
+    signUp(context, payload) {
+      return userService.insertUser(payload).then(res => {
+        console.log("user.js", res);
+        if(res.data !== null) {
+          return true;
+        } else {
+          return false;
+        }
+      });
     }
   }
 }

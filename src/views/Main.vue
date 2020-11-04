@@ -16,7 +16,7 @@ export default {
   },
   computed: {
     ...mapState({
-      isSignedIn: state => state.isSignedIn,
+      isLogin: state => state.isLogin,
     })
   },
   components: {

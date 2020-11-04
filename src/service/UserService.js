@@ -2,7 +2,7 @@ import rest from '@/rest';
 
 export default {
   getUser(payload) {
-    return rest.post('/user/signUp',{"aaa":"bbb","ccc":"ddd"}).then(res => {
+    return rest.get('/user/login?id=b&pwd=b').then(res => {
       console.log(res);
       console.log(payload);
       return "suee";
@@ -10,5 +10,9 @@ export default {
   },
   insertUser(obj) {
     console.log(obj);
+    return rest.post('/user/register', obj).then(res => {
+      console.log("userService", res);
+      return "suee";
+    });
   }
 }

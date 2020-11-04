@@ -11,10 +11,10 @@ import { mapMutations } from 'vuex';
     }),
     methods: {
       goToSignOut() {
-        this.SET_IS_SIGNED_IN(false);
+        this.SET_IS_LOGIN(false);
         this.$emit("signOut");
       },
-      ...mapMutations(['SET_IS_SIGNED_IN'])
+      ...mapMutations(['SET_IS_LOGIN'])
     },
   }
 </script>

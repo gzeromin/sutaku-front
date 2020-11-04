@@ -15,24 +15,6 @@ body {
   font-family: "Nanum Gothic", sans-serif;
 }
 
-table {
-  margin: 2rem auto;
-  width: 90%;
-  border-spacing: 0 2.5rem;
-}
-
-table th {
-  width: 15%;
-}
-
-button {
-  margin: 0 3rem;
-  padding: .5rem 2rem;
-  border-radius: 1rem;
-  border-style: outset;
-  background-color: lightgray;
-}
-
 .user {
   height: 35rem;
 }
@@ -114,34 +96,67 @@ button {
   background-color: lightcoral;
 }
 
+.login {
+  float: right;
+  padding: calc(7vh * .25);
+}
+
+#avatar {
+  display: block;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 1rem;
+  -webkit-box-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.3);
+  width: calc(7vh * .5);
+  height: calc(7vh * .5);
+  background-size: cover;
+  background-position: center center;
+}
+
+.sign-card {
+  background: linear-gradient(-160deg, transparent 50px, white 0) top right;
+}
+
+.sign-card * {
+  font-size: 14px;
+}
+
+.sign-in-card {
+  display: inline-block;
+  width: 20%;
+}
+
 /* CORE */
 #core-header {
   position: fixed;
   width: 100%;
-  height: 100px;
+  height: 7vh;
   overflow: hidden;
   left: 0;
   z-index: 100;
-  background-color: white;
   -webkit-box-shadow: 0.2rem 0.2rem 0.8rem rgba(0, 0, 0, 0.2);
           box-shadow: 0.2rem 0.2rem 0.8rem rgba(0, 0, 0, 0.2);
+  background-color: white;
 }
 
 #core-personal {
   position: fixed;
-  top: 100px;
+  top: 7vh;
   height: 100%;
   left: 0;
   z-index: 100;
-  width: 20%;
+  width: 15vw;
   border-right: 1px dotted rgba(0, 0, 0, 0.2);
 }
 
 #core-body {
-  top: 100px;
+  top: 7vh;
   height: 100vh;
   position: relative;
-  margin-left: 20%;
+  margin-left: 15vw;
+  background-color: yellow;
 }
 
 .core-view-before-sign-in {
@@ -158,7 +173,7 @@ button {
 #core-question-list {
   position: fixed;
   height: 100%;
-  top: 110px;
+  top: 7vh;
   right: 0;
   z-index: 100;
   width: 20%;

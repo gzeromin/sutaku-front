@@ -1,0 +1,31 @@
+.login {
+  float: right;
+  padding: calc(#{$header-height} * .25);
+}
+//login-btn##########################################################
+#login-btn {
+}
+#avatar {
+  display: block;
+  align-items: center;
+  border-radius: 1rem;
+  box-shadow: .1rem .1rem .2rem rgba(0,0,0, .3);
+  width: calc(#{$header-height} * .5);
+  height: calc(#{$header-height} * .5);
+  background-size: cover;
+  background-position: center center;
+}
+.sign-card {
+  background: linear-gradient(-160deg, transparent 50px, white 0) top right;
+}
+.sign-card * {
+  font-size: 14px;
+}
+.after-sign-in {
+
+}
+.sign-in-card {
+  display: inline-block;
+  width: 20%;
+}
+//-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-

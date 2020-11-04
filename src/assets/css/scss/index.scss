@@ -17,8 +17,8 @@
     overflow: hidden;
     left: 0;
     z-index: 100;
-    background-color: yellow;
     box-shadow: .2rem .2rem .8rem rgba(0,0,0,.2);
+    background-color: white;
 }
 
 #core-personal {
@@ -27,7 +27,7 @@
     height: 100%;
     left: 0;
     z-index: 100;
-    width: 20%;
+    width: $personal-width;
     border-right: 1px dotted rgba(0,0,0,.2);
 }
 
@@ -35,7 +35,8 @@
     top: $header-height;
     height: 100vh;
     position: relative;
-    margin-left: 20%;
+    margin-left: $personal-width;
+    background-color: yellow;
 }
 .core-view-before-sign-in {
     margin-right: 20%;
