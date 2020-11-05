@@ -1,11 +1,9 @@
 <template>
   <div>
-    <div v-if="pqNavi == 'problem'">
-      <List v-if="funcNavi=='list'"/>
-      <Upload v-else-if="funcNavi=='upload'"/>
-      <Problem v-else/>
-    </div>
-    <div v-if="pqNavi == 'question'">Question</div>
+    <List v-if="funcNavi=='list'"/>
+    <Upload v-else-if="funcNavi=='upload'"/>
+    <LoginArea v-else-if="funcNavi=='login'"/>
+    <Problem v-else/>
   </div>
 </template>
 <script>
@@ -14,14 +12,14 @@ export default {
   name: "CoreView",
   computed: {
     ...mapState({
-      pqNavi: state => state.pqNavi,
       funcNavi: state => state.funcNavi,
     })
   },
   components: {
-    Problem: () => import("@/components/views/Problem.vue"),
-    List: () =>  import("@/components/views/List.vue"),
-    Upload: () =>  import("@/components/views/Upload.vue"),
+    Problem: () => import("@/components/pages/home/Problem.vue"),
+    List: () =>  import("@/components/pages/list/List.vue"),
+    Upload: () =>  import("@/components/pages/upload/Upload.vue"),
+    LoginArea: () =>  import("@/components/pages/login/LoginArea.vue"),
   }
 };
 </script>

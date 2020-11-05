@@ -15,61 +15,6 @@ body {
   font-family: "Nanum Gothic", sans-serif;
 }
 
-.user {
-  height: 35rem;
-}
-
-.user-photo {
-  margin: 1rem auto;
-  width: 68%;
-  height: 20rem;
-  background-size: cover;
-  background-position: center center;
-  border-radius: 1rem;
-  -webkit-box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.3);
-          box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.3);
-}
-
-.user-name {
-  padding: 2rem;
-  font-size: 2rem;
-  text-align: end;
-}
-
-.navi {
-  text-align: end;
-}
-
-.navi-menu {
-  text-decoration: underline;
-  padding: 1rem;
-  font-size: 3rem;
-  text-transform: uppercase;
-  background-size: 220%;
-  -webkit-transition: all .4s;
-  transition: all .4s;
-}
-
-.navi-menu:hover {
-  text-decoration: none;
-  background-position: 100%;
-  color: beige;
-}
-
-.navi #list {
-  background-image: linear-gradient(120deg, white 0%, white 82%, yellow 82%, black 100%);
-}
-
-.navi #upload {
-  background-image: linear-gradient(120deg, white 0%, white 77%, hotpink 77%, black 100%);
-}
-
-.selected {
-  text-decoration: none;
-  background-position: 100%;
-  color: beige;
-}
-
 .font-size-small {
   font-size: 1.5rem;
   font-weight: normal;
@@ -94,11 +39,6 @@ body {
 
 .color-question {
   background-color: lightcoral;
-}
-
-.login {
-  float: right;
-  padding: calc(7vh * .25);
 }
 
 #avatar {
@@ -128,8 +68,90 @@ body {
   width: 20%;
 }
 
+.navi-home, .navi-menu {
+  text-decoration: underline;
+  padding: 1rem;
+  font-size: 3rem;
+  text-transform: uppercase;
+  background-size: 220%;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.navi-home:hover, .navi-menu:hover {
+  text-decoration: none;
+  background-position: 100%;
+  color: beige;
+}
+
+.navi {
+  background-color: white;
+  padding: calc(7vh * .1);
+}
+
+.navi::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.navi-home {
+  float: left;
+}
+
+.navi-menu {
+  float: right;
+}
+
+.navi #logout {
+  background-image: linear-gradient(120deg, white 0%, white 82%, green 82%, black 100%);
+}
+
+.navi #login {
+  background-image: linear-gradient(120deg, white 0%, white 82%, purple 82%, black 100%);
+}
+
+.navi #list {
+  background-image: linear-gradient(120deg, white 0%, white 77%, yellow 77%, black 100%);
+}
+
+.navi #upload {
+  background-image: linear-gradient(120deg, white 0%, white 65%, hotpink 65%, black 100%);
+}
+
+.navi #home {
+  background-image: linear-gradient(120deg, white 0%, white 65%, blue 65%, black 100%);
+}
+
+.selected {
+  text-decoration: none;
+  background-position: 100%;
+  color: beige;
+}
+
+.user {
+  height: 35rem;
+}
+
+.user-photo {
+  margin: 1rem auto;
+  width: 68%;
+  height: 20rem;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 1rem;
+  -webkit-box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.3);
+}
+
+.user-name {
+  padding: 2rem;
+  font-size: 2rem;
+  text-align: end;
+}
+
 /* CORE */
-#core-header {
+.core-header {
   position: fixed;
   width: 100%;
   height: 7vh;
@@ -141,7 +163,7 @@ body {
   background-color: white;
 }
 
-#core-personal {
+.core-personal {
   position: fixed;
   top: 7vh;
   height: 100%;
@@ -151,12 +173,15 @@ body {
   border-right: 1px dotted rgba(0, 0, 0, 0.2);
 }
 
-#core-body {
+.core-body, .core-body-wide {
   top: 7vh;
   height: 100vh;
   position: relative;
+  padding: 1rem;
+}
+
+.core-body {
   margin-left: 15vw;
-  background-color: yellow;
 }
 
 .core-view-before-sign-in {

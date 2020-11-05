@@ -10,8 +10,7 @@ export default new Vuex.Store({
     user,
   },
   state: {
-    isLogin: true,
-    pqNavi: 'problem',
+    isLogin: false,
     funcNavi: 'problem',
     problem: {
       title: '참말, 거짓말',
@@ -40,9 +39,6 @@ export default new Vuex.Store({
   mutations: {
     SET_IS_LOGIN(state, value) {
       state.isLogin = value;
-    },
-    SET_PQ_NAVI(state, value) {
-      state.pqNavi = value;
     },
     SET_FUNC_NAVI(state, value) {
       state.funcNavi = value;

@@ -1,8 +1,8 @@
 <template>
   <div>
-    <core-header id="core-header"/>
-    <core-personal id="core-personal"/>
-    <core-body id="core-body"/>
+    <core-header class="core-header"/>
+    <core-personal class="core-personal" v-if="isLogin"/>
+    <core-body :class="[isLogin ? 'core-body' : 'core-body-wide']"/>
   </div>
 </template>
 

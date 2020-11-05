@@ -16,7 +16,7 @@ import { mapState } from 'vuex'
       })
     },
     components: {
-      Unit: () => import("@/components/views/items/Unit.vue"),
+      Unit: () => import("@/components/pages/list/items/Unit.vue"),
     }
   }
 </script>

@@ -1,0 +1,17 @@
+.user{
+  height: 35rem;
+  &-photo {
+    margin: 1rem auto;
+    width: 68%;
+    height: 20rem;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 1rem;
+    box-shadow: .3rem .3rem .3rem rgba(0,0,0, .3);
+  }
+  &-name {
+    padding: 2rem;
+    font-size: 2rem;
+    text-align: end;
+  }
+}
