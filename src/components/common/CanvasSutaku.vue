@@ -30,15 +30,13 @@
         :close-on-content-click="false"
       >
         <template v-slot:activator="{ on, attrs }">
-          
-            <v-btn
-              text
-              v-bind="attrs"
-              v-on="on"
-            >
-              {{size}}
-            </v-btn>
-          
+          <v-btn
+            text
+            v-bind="attrs"
+            v-on="on"
+          >
+            {{size}}
+          </v-btn>
         </template>
         <label 
           class="size-item"
@@ -178,8 +176,8 @@ export default {
     },
     setSize() {
       const wrapper = this.$refs.wrapper;
-      this.c.width = wrapper.clientWidth*0.95;
-      this.c.height = 360;
+      this.c.width = wrapper.clientWidth;
+      this.c.height = this.c.width * 1.5;
     },
     redraw() {
       this.ctx.clearRect(0, 0, this.c.width, this.c.height);
@@ -241,25 +239,25 @@ export default {
 <style scoped>
 canvas {
   display: block;
-  margin: 10px auto 0;
+  margin: 0 auto;
   cursor: none;
 }
 .tools {
   text-align:center;
   background-color: beige;
-  margin: 0 20px 10px;
-  border-radius: 20px;
+  margin: 0 .5rem .5rem;
+  border-radius: .5rem;
 }
 .tools button {
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .cursor {
   position: fixed;
   top: 0;
   left: 0;
-  width: 10px;
-  height: 10px;
+  width: 1rem;
+  height: 1rem;
   border-radius: 50%;
   border: 2px solid rgb(30, 30, 30);
   z-index: 100;
